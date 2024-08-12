@@ -1,0 +1,27 @@
+##
+target/
+.pybuilder/
+
+
+
+# Temp and compiled files
+*.retry
+*.swp
+*.pyc
+*.local
+
+# Eclipse files
+.project
+
+# InteliJ files
+.DS_Store
+.idea
+*.iml
+
+# VSCode files
+.vscode/
+.vs/
+init-env.sh
+src/main/python/adeo/lgn/utils/*.json
+src/main/python/adeo/lgn/utils/*.yml
+secr/

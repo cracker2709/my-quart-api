@@ -36,8 +36,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       -
-        name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: cracker2709/my-quart-api
+        name: Build & push Docker image
+        run: |
+          DOCKER_BUILDKIT=1 docker build -t cracker2707/my-quart-api:latest .
+          docker push cracker2707/my-quart-api:latest
+      

@@ -1,7 +1,7 @@
 from quart import Blueprint
 import aiohttp
 
-async_routes = Blueprint('async_routes', __name__)
+async_routes = Blueprint('async_namespace', __name__, url_prefix='/api/v1/async_ns')
 
 
 @async_routes.route("/async")

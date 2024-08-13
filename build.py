@@ -99,7 +99,7 @@ scripts = [
 ]
 
 packages = find_packages(where="src/main/python")
-version = "__VERSION__"
+version = "1.0.0"
 
 namespace_packages = []
 py_modules = ['__init__']

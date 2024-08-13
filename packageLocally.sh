@@ -14,11 +14,9 @@ fi
 echo y | pip uninstall my-quart-api
 $VIRTUAL_ENV/bin/python -m pip install --upgrade pip
 pip install -r requirements.txt
-sed -i "s/\"__VERSION__\"/\"1.0.0\"/g" ./build.py
 pyb
 WHL=$(find -type f -name "*.whl")
 pip install ${WHL}  --force-reinstall
-sed -i "s/\"1.0.0\"/\"__VERSION__\"/g" ./build.py
 
 {
   echo "ENV=dev"

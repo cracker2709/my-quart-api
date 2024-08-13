@@ -95,7 +95,7 @@ project_urls = {}
 requires_python = ">=3.8.12"
 
 scripts = [
-    'scripts/app.py'
+    'scripts/main.py'
 ]
 
 packages = find_packages(where="src/main/python")

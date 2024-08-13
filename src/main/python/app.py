@@ -5,6 +5,9 @@ from quart import Quart
 from quart_cors import cors
 from quart_schema import QuartSchema
 
+from api import async_routes
+from api.swagger import docs_routes
+
 app = Quart(__name__)
 cors(app, allow_origin="*")
 info = dict()
@@ -18,21 +21,10 @@ app.config['HOST'] = os.getenv("SERVER_HOST")
 app.config['PORT'] = int(os.getenv("SERVER_PORT", 5000))
 
 
-@app.route('/')
-async def hello():
-    return 'Hello, Quart!'
+# Register blueprints
+app.register_blueprint(async_routes)
+app.register_blueprint(docs_routes)
 
-
-@app.route("/async")
-async def get():
-    async with aiohttp.ClientSession() as session:
-        async with session.get('https://jsonplaceholder.typicode.com/todos/1') as response:
-            data = await response.json()
-            return data
-
-
-
-# Add a route to serve the Swagger UI
-@app.route("/docs")
-async def docs():
-    return await QuartSchema.swagger_ui()
+info = dict()
+info['title'] = "Quart API"
+info['version'] = "1.0"

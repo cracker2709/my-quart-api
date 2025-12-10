@@ -65,7 +65,7 @@ install_requires = [
     "requests==2.32.3",
     "setuptools==41.0.1",
     "tomli==2.0.1",
-    "urllib3==2.2.1",
+    "urllib3==2.6.0",
     "waitress==3.0.0",
     "wheel==0.33.4",
     "wsproto==1.2.0",
